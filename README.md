@@ -1,3 +1,9 @@
+![status: inactive](https://img.shields.io/badge/status-inactive-red.svg)
+
+This project is no longer actively developed or maintained.
+
+For new work on this check out [A helper command for running WordPress on Google Cloud Platform](https://github.com/GoogleCloudPlatform/php-docs-samples/tree/master/appengine/wordpress)
+
 # WordPress on App Engine Starter Project
 
 ***Note: This repo is essentially the "source" of the starter projects, allowing you to browse our code, suggest changes, etc. We provide already-built-and-zipped WordPress projects for Windows, Mac, and Linux at [Quick Start WordPress for Google App Engine](http://googlecloudplatform.github.io/appengine-php-wordpress-starter-project/).***
@@ -7,9 +13,9 @@
 1. Install the [PHP SDK for Google App Engine](https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_PHP)
 2. Install [MySQL](http://dev.mysql.com/downloads/)
 3. [Sign up](http://cloud.google.com/console) for a Google Cloud Platform project, and
-set up a Cloud SQL instance, as described [here](https://developers.google.com/cloud-sql/docs/instances), and a
+set up a Cloud SQL instance, as described [here](https://cloud.google.com/sql/docs/getting-started#create), and a
 Cloud Storage bucket, as described [here](https://developers.google.com/storage/docs/signup). You'll want to name
-your Cloud SQL instance "wordpress" to match the config files provided here.
+your Cloud SQL instance "wordpress" to match the config files provided here. To keep costs down, we suggest signing up for a D0 instance with package billing. 
 4. Visit your project in the
 [Google Cloud Console](http://cloud.google.com/console), going to the App Engine section's **Application Settings**
 area, and make a note of the **Service Account Name** for your application, which has an e-mail address
@@ -55,7 +61,11 @@ This script:
 
 ## Running WordPress locally
 
-Using MySQL, run `databasesetup.sql` to set up your local database. For a default installation (no root password)
+>First, edit [wp-config.php](https://github.com/GoogleCloudPlatform/appengine-php-wordpress-starter-project/edit/master/wp-config.php)
+  so that the local environment password for root is not literally the string "password" -- unless that's what you used
+  when setting up MySQL locally.
+
+Using MySQL's command line version, run `databasesetup.sql` to set up your local database. For a default installation (no root password)
 this would be:
 
     mysql -u root < databasesetup.sql
